@@ -1,0 +1,14 @@
+
+
+1. new file dialog - nonmodeal
+- option to choose width and height etc
+
+2. thread - load pictures
+- freezen gui - high/quality pic 
+
+3. ruler
+
+4. zoom in/out
+
+5. scroll bar to drawing area
+
