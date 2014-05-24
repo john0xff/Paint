@@ -18,112 +18,100 @@ import com.phoenixjcam.application.menu.BarMenu;
 import com.phoenixjcam.application.status.StatusBar;
 import com.phoenixjcam.application.tools.ToolBar;
 
-public final class Paint extends JFrame
-{
-	private static final long serialVersionUID = 1L;
+public final class Paint extends JFrame {
+    private static final long serialVersionUID = 1L;
 
-	private Drawer drawer;
-	private StatusBar statusBar;
+    private Drawer drawer;
+    private StatusBar statusBar;
 
-	private JPanel backgroundPanel;
+    private JPanel backgroundPanel;
 
-	private String filePath;
-	private String fileName;
+    private String filePath;
+    private String fileName;
 
-	public Paint()
-	{
-		setFilePath("");
-		setFileName("Untitled");
-		setTitle(getFileName() + " - Paint");
+    public Paint() {
+	setFilePath("");
+	setFileName("Untitled");
+	setTitle(getFileName() + " - Paint");
 
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		int width = 900;
-		int height = 600;
-		setSize(width, height);
+	int width = 900;
+	int height = 600;
+	setSize(width, height);
 
-		Point centerPoint = GraphicsEnvironment.getLocalGraphicsEnvironment().getCenterPoint();
-		setLocation((centerPoint.x) - (width / 2), (centerPoint.y) - (height / 2));
+	Point centerPoint = GraphicsEnvironment.getLocalGraphicsEnvironment()
+		.getCenterPoint();
+	setLocation((centerPoint.x) - (width / 2), (centerPoint.y)
+		- (height / 2));
 
-		initComponents();
-		add(initPanel());
+	initComponents();
+	add(initPanel());
 
-		setVisible(true);
-	}
+	setVisible(true);
+    }
 
-	private void initComponents()
-	{
-		JMenuBar mnBar = new BarMenu(this).getBarMenu();
-		setJMenuBar(mnBar);
+    private void initComponents() {
+	JMenuBar mnBar = new BarMenu(this).getBarMenu();
+	setJMenuBar(mnBar);
 
-		JToolBar toolBar = new ToolBar(this).getToolBar();
-		add(toolBar, BorderLayout.PAGE_START);
+	JToolBar toolBar = new ToolBar(this).getToolBar();
+	add(toolBar, BorderLayout.PAGE_START);
 
-		statusBar = new StatusBar();
-		add(statusBar, BorderLayout.PAGE_END);
-	}
+	statusBar = new StatusBar();
+	add(statusBar, BorderLayout.PAGE_END);
+    }
 
-	private JPanel initPanel()
-	{
-		backgroundPanel = new JPanel();
-		backgroundPanel.setLayout(null);
-		drawer = new Drawer(new Dimension(300, 200), Shape.BRUSH, State.PAINTING, 2, backgroundPanel, this);
-		backgroundPanel.add(drawer);
-		backgroundPanel.setBackground(Color.GRAY);
+    private JPanel initPanel() {
+	backgroundPanel = new JPanel();
+	backgroundPanel.setLayout(null);
+	drawer = new Drawer(new Dimension(300, 200), Shape.BRUSH,
+		State.PAINTING, 2, backgroundPanel, this);
+	backgroundPanel.add(drawer);
+	backgroundPanel.setBackground(Color.GRAY);
 
-		setDrawer(drawer);
+	setDrawer(drawer);
 
-		return backgroundPanel;
-	}
+	return backgroundPanel;
+    }
 
-	public Drawer getDrawer()
-	{
-		return drawer;
-	}
+    public Drawer getDrawer() {
+	return drawer;
+    }
 
-	public void setDrawer(Drawer drawer)
-	{
-		this.drawer = drawer;
-	}
+    public void setDrawer(Drawer drawer) {
+	this.drawer = drawer;
+    }
 
-	public StatusBar getStatusBar()
-	{
-		return statusBar;
-	}
+    public StatusBar getStatusBar() {
+	return statusBar;
+    }
 
-	public void setStatusBar(StatusBar statusBar)
-	{
-		this.statusBar = statusBar;
-	}
+    public void setStatusBar(StatusBar statusBar) {
+	this.statusBar = statusBar;
+    }
 
-	public String getFilePath()
-	{
-		return filePath;
-	}
+    public String getFilePath() {
+	return filePath;
+    }
 
-	public void setFilePath(String filePath)
-	{
-		this.filePath = filePath;
-	}
+    public void setFilePath(String filePath) {
+	this.filePath = filePath;
+    }
 
-	public String getFileName()
-	{
-		return fileName;
-	}
+    public String getFileName() {
+	return fileName;
+    }
 
-	public void setFileName(String fileName)
-	{
-		this.fileName = fileName;
-	}
+    public void setFileName(String fileName) {
+	this.fileName = fileName;
+    }
 
-	public static void main(String[] args)
-	{
-		javax.swing.SwingUtilities.invokeLater(new Runnable()
-		{
-			public void run()
-			{
-				new Paint();
-			}
-		});
-	}
+    public static void main(String[] args) {
+	javax.swing.SwingUtilities.invokeLater(new Runnable() {
+	    public void run() {
+		new Paint();
+	    }
+	});
+    }
 }

@@ -7,32 +7,27 @@ import javax.swing.JMenu;
 
 import com.phoenixjcam.application.Paint;
 
-public class ViewMenu implements ActionListener
-{
-	private Paint paint;
-	private JMenu mnView;
+public class ViewMenu implements ActionListener {
+    private Paint paint;
+    private JMenu mnView;
 
-	public ViewMenu()
-	{
-		// TODO Auto-generated constructor stub
-	}
+    public ViewMenu() {
+	// TODO Auto-generated constructor stub
+    }
 
-	public ViewMenu(Paint paint)
-	{
-		this.paint = paint;
-	}
+    public ViewMenu(Paint paint) {
+	this.paint = paint;
+    }
 
-	public JMenu viewItems()
-	{
-		mnView = new JMenu("View");
-		return mnView;
-	}
+    public JMenu viewItems() {
+	mnView = new JMenu("View");
+	return mnView;
+    }
 
-	@Override
-	public void actionPerformed(ActionEvent e)
-	{
-		// TODO Auto-generated method stub
+    @Override
+    public void actionPerformed(ActionEvent e) {
+	// TODO Auto-generated method stub
 
-	}
+    }
 
 }
