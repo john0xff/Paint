@@ -12,3 +12,7 @@
 
 5. scroll bar to drawing area
 
+6. change EXIT_ON_CLOSE to do_nothing and handle exit with check out drwaing area
+
+ 
+
